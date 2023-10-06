@@ -3,14 +3,17 @@
 /**
  * main - This is the main function for entry
  *
- * Return: 0 on successful execution
+ * Return: 0 on successful execution of code
  */
 int main(void)
 {
-	int i;
+	int i = 'z';
 
-	for (i = 'a'; i <= 'z'; i++)
+	while (i >= 'a')
+	{
 		putchar(i);
+		i--;
+	}
 	putchar('\n');
 	return (0);
 }
