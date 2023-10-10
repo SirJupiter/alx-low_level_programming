@@ -10,9 +10,9 @@ int main(void)
 	long int l_term, n_term, sum;
 	long int fibo[2];
 
-	sum = 0;
 	fibo[0] = 1;
 	fibo[1] = 2;
+	sum = fibo[1];
 	l_term = fibo[1];
 	while (l_term <= 4000000)
 	{
