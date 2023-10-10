@@ -7,8 +7,8 @@
  */
 int main(void)
 {
-	long long int l_term, n_term, sum;
-	long long int fibo[2];
+	long int l_term, n_term, sum;
+	long int fibo[2];
 
 	sum = 0;
 	fibo[0] = 1;
@@ -23,6 +23,6 @@ int main(void)
 		if (n_term % 2 == 0)
 			sum = sum + n_term;
 	}
-	printf("%lld\n", sum);
+	printf("%ld\n", sum);
 	return (0);
 }
