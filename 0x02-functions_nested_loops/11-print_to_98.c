@@ -10,7 +10,7 @@ void print_to_98(int n)
 	int i;
 
 	i = n;
-	if (i < 98)
+	if (i <= 98)
 	{
 		while (i <= 98)
 		{
@@ -20,7 +20,7 @@ void print_to_98(int n)
 			i++;
 		}
 	}
-	else if (i > 98)
+	else if (i >= 98)
 	{
 		while (i >= 98)
 		{
