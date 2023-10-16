@@ -6,10 +6,10 @@
  */
 void print_rev(char *s)
 {
-	int i, j;
+	int i;
 	int length = 0;
 
-	for (j = 0; s[j] != '\0'; j++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		length++;
 	}
