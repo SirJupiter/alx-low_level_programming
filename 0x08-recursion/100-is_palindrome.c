@@ -27,9 +27,8 @@ int _check_palindrome(int end, int start, char *str)
 int is_palindrome(char *s)
 {
 	int length = 0;
-	int i;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (s[length] != '\0')
 	{
 		length++;
 	}
