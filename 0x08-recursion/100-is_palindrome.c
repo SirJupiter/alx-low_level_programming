@@ -2,20 +2,19 @@
 
 /**
  * _check_palindrome - checks palindrome
- * @len: length of string
+ * @end: length of string - 1
+ * @start: start of string
  * @str: pointer to string
  *
  * Return: 0 if a palindrome
 */
-int _check_palindrome(int len, char *str)
+int _check_palindrome(int end, int start, char *str)
 {
-	int end = len - 1;
-
-	if (*str != str[end])
-		return (0);
-	if (*str >= str[end])
+	if (start >= end)
 		return (1);
-	return (_check_palindrome(len - 1, str + 1));
+	if (str[start] != str[end])
+		return (0);
+	return (_check_palindrome(end - 1, start + 1, str));
 }
 
 /**
@@ -28,15 +27,15 @@ int _check_palindrome(int len, char *str)
 int is_palindrome(char *s)
 {
 	int length = 0;
+	int i;
 
-	while (*s != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		length++;
-		s++;
 	}
 
 	if (length <= 1)
 		return (1);
 
-	return (_check_palindrome(length, s));
+	return (_check_palindrome(length - 1, 0, s));
 }
