@@ -23,6 +23,12 @@ size_t print_listint_safe(const listint_t *head)
 
 		if (head->next == NULL)
 			break;
+
+		if (head->n == 98)
+		{
+			printf("-> [%p] %d\n", (void *)head, head->n);
+			break;
+		}
 		head = head->next;
 	}
 
