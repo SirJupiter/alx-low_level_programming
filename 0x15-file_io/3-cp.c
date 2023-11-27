@@ -1,6 +1,8 @@
 #include "main.h"
 #include <stdlib.h>
 
+#define THE_BUFFER 1024
+
 /**
  * main - program copies the content of a file to another file
  * @ac: number of arguments
@@ -11,8 +13,8 @@
 int main(int ac, char **av)
 {
 	int file_from, file_to;
-	int read_text, write_text;
-	char buffer[1024];
+	ssize_t read_text, write_text;
+	char buffer[THE_BUFFER];
 
 	if (ac != 3)
 	{
