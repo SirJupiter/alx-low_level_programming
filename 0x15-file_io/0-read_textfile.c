@@ -25,15 +25,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buffer = malloc(letters * sizeof(char));
 	if (buffer == NULL)
 	{
-		close(file_desc);
 		return (0);
 	}
 
 	read_text = read(file_desc, buffer, letters);
 	if (read_text == -1)
 	{
-		free(buffer);
-		close(file_desc);
 		return (0);
 	}
 
