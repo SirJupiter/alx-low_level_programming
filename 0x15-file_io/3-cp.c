@@ -22,7 +22,6 @@ int main(int ac, char **av)
 		exit(97);
 	}
 
-	file_to = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	file_from = open(av[1], O_RDONLY);
 	if (file_from == -1)
 	{
@@ -30,16 +29,17 @@ int main(int ac, char **av)
 		exit(98);
 	}
 
+	file_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (file_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s", av[2]);
 		exit(99);
 	}
 
-	while ((read_text = read(file_from, buffer, sizeof(buffer))) > 0)
+	while ((read_text = read(file_from, buffer, THE_BUFFER)) > 0)
 	{
 		write_text = write(file_to, buffer, read_text);
-		if (write_text == -1)
+		if (write_text != read_text)
 		{
 			dprintf(2, "Error: Can't write to %s\n", av[2]);
 			exit(99);
