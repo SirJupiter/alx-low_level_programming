@@ -39,13 +39,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	written_text = write(STDOUT_FILENO, buffer, read_text);
 
-	if (written_text == -1 || read_text != written_text)
-	{
-		close(file_desc);
-		return (0);
-	}
-
-
 	free(buffer);
 	close(file_desc);
 
