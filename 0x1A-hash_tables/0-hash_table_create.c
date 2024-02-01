@@ -11,10 +11,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	unsigned int iterator;
 	hash_table_t *ht = malloc(sizeof(hash_table_t));
 
-	if (ht == NULL)
-		return (NULL);
-
-	if (size <= 0)
+	if (ht == NULL || size <= 0)
 		return (NULL);
 
 	ht->size = size;
@@ -23,7 +20,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (ht->array == NULL)
 		return (NULL);
 
-	for  (iterator = 0; iterator < ht->size; iterator++)
+	for  (iterator = 0; iterator < size; iterator++)
 		ht->array[iterator] = NULL;
 
 	return (ht);
