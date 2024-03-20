@@ -1,0 +1,6 @@
+GCC := gcc
+
+all: school
+
+school: main.c school.c
+	$(GCC) main.c school.c -o school
